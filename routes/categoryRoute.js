@@ -10,7 +10,7 @@ app.post('/cnew', (request, response) => {
 //retrieve data
 app.get('/cfetch', async (request, response) => {
     try {
-      const categories = await categorymodel.find();
+      const categories = await categorymodel.find({ Status: 'ACTIVE'});
       response.json(categories);
     } 
     catch (error) {
